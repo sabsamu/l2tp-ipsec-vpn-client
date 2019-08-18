@@ -22,6 +22,7 @@ Setup environment variables for your credentials and config:
     export VPN_PSK='my pre shared key'
     export VPN_USERNAME='myuser@myhost.com'
     export VPN_PASSWORD='mypass'
+    export VPN_POST_RUN='ip r a NET dev ppp0'
 
 Now run it (you can daemonize of course after debugging):
 
@@ -31,7 +32,8 @@ Now run it (you can daemonize of course after debugging):
                -e VPN_PSK \
                -e VPN_USERNAME \
                -e VPN_PASSWORD \
-                  ubergarm/l2tp-ipsec-vpn-client
+               -e VPN_POST_RUN \
+                  janpekar/l2tp-ipsec-vpn-client
 
 ## Route
 From the host machine configure traffic to route through VPN link:
