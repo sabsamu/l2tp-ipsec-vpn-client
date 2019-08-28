@@ -5,7 +5,7 @@ A tiny Alpine based docker image to quickly setup an L2TP over IPsec VPN client 
 
 ## Motivation
 Does your office or a client have a VPN server already setup and you
-just need to connect to it? Do you use Linux and are jealous that the
+just need to connect to it? Do you use GNU/Linux and are jealous that the
 one thing a MAC can do better is quickly setup this kind of VPN? Then
 here is all you need:
 
@@ -49,15 +49,6 @@ From the host machine configure traffic to route through VPN link:
     sudo route del -net default gw 10.0.1.1 dev eth0
     # when your done add your normal routes and delete the VPN routes
     # or just `docker stop` and you'll probably be okay
-
-
-## Debugging
-On your VPN client localhost machine you may need to `sudo modprobe af_key`
-if you're getting this error when starting:
-```
-pluto[17]: No XFRM/NETKEY kernel interface detected
-pluto[17]: seccomp security for crypto helper not supported
-```
 
 
 ## TODO
