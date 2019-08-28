@@ -1,6 +1,5 @@
 l2tp-ipsec-vpn-client
 ===
-[![](https://images.microbadger.com/badges/image/ubergarm/l2tp-ipsec-vpn-client.svg)](https://microbadger.com/images/ubergarm/l2tp-ipsec-vpn-client) [![](https://images.microbadger.com/badges/version/ubergarm/l2tp-ipsec-vpn-client.svg)](https://microbadger.com/images/ubergarm/l2tp-ipsec-vpn-client) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/ubergarm/l2tp-ipsec-vpn-client/blob/master/LICENSE)
 
 A tiny Alpine based docker image to quickly setup an L2TP over IPsec VPN client w/ PSK.
 
@@ -33,7 +32,7 @@ Now run it (you can daemonize of course after debugging):
                -e VPN_USERNAME \
                -e VPN_PASSWORD \
                -e VPN_POST_RUN \
-                  janpekar/l2tp-ipsec-vpn-client
+                  samsabu/l2tp-ipsec-vpn-client
 
 ## Route
 From the host machine configure traffic to route through VPN link:
@@ -51,10 +50,6 @@ From the host machine configure traffic to route through VPN link:
     # when your done add your normal routes and delete the VPN routes
     # or just `docker stop` and you'll probably be okay
 
-## Test
-You can see if your IP address changes after adding appropriate routes e.g.:
-
-    curl icanhazip.com
 
 ## Debugging
 On your VPN client localhost machine you may need to `sudo modprobe af_key`
@@ -64,11 +59,6 @@ pluto[17]: No XFRM/NETKEY kernel interface detected
 pluto[17]: seccomp security for crypto helper not supported
 ```
 
-## Strongswan
-The previous `strongswan` based version of this docker image is still available on docker hub here:
-```bash
-docker pull ubergarm/l2tp-ipsec-vpn-client:strongswan
-```
 
 ## TODO
 - [x] `ipsec` connection works
